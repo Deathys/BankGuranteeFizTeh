@@ -6,6 +6,6 @@ namespace BankGuranteeHack.Contracts
     {
         public Guid Id { get; set; }
         public string BankName { get; set; }
-        public int Commission { get; set; }
+        public string Commission { get; set; }
     }
 }

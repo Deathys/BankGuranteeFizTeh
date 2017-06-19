@@ -18,7 +18,7 @@ namespace BankGuranteeHack.Controllers
         [HttpGet("contract/{contract}")]
         public ContractInfo GetContract(string contract)
         {
-            string amount = "8544.36";
+            string amount = "3 500 000";
             string description = "Закупка лекарственных препаратов, которые предназначены для назначения пациенту";
 
             string tx = bc.CreateContract(contract, $"{contract},{description}");
@@ -51,17 +51,17 @@ namespace BankGuranteeHack.Controllers
                 new BankCondition {
                     Id = Guid.NewGuid(),
                     BankName = "ОАО «Сбербанк России»",
-                    Commission = 15,
+                    Commission = "340 000",
                 },
                 new BankCondition {
                     Id = Guid.NewGuid(),
                     BankName = "ОАО «Альфа-банк»",
-                    Commission = 13,
+                    Commission = "250 000",
                 },
                 new BankCondition {
                     Id = Guid.NewGuid(),
                     BankName = "АО КБ «Модульбанк»",
-                    Commission = 12,
+                    Commission = "200 000",
                 },
             };
         }
