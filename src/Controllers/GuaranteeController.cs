@@ -18,11 +18,13 @@ namespace BankGuranteeHack.Controllers
         [HttpGet("contract/{contract}")]
         public ContractInfo GetContract(string contract)
         {
+            string amount = "8544.36";
+            string description = "Закупка лекарственных препаратов, которые предназначены для назначения пациенту";
 
-            string tx = bc.SendEth();
+            string tx = bc.CreateContract(contract, $"{contract},{description}");
 
             return new ContractInfo {
-                Amount = "8544.36",
+                Amount = amount,
                 Description = "Закупка лекарственных препаратов, которые предназначены для назначения пациенту",
                 Customer = new Customer
                 {
@@ -42,8 +44,9 @@ namespace BankGuranteeHack.Controllers
 
         
         [HttpGet("conditions")]
-        public List<BankCondition> GetBankConditions(int id)
+        public List<BankCondition> GetBankConditions()
         {
+
             return new List<BankCondition> {
                 new BankCondition {
                     Id = Guid.NewGuid(),
