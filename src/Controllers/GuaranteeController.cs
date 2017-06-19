@@ -17,7 +17,7 @@ namespace BankGuranteeHack.Controllers
         public ContractInfo GetContract(string contract)
         {
             return new ContractInfo {
-                Amount = 8544.36M,
+                Amount = "8544.36",
                 Description = "Закупка лекарственных препаратов, которые предназначены для назначения пациенту",
                 Customer = new Customer
                 {
