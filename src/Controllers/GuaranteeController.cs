@@ -38,8 +38,6 @@ namespace BankGuranteeHack.Controllers
         [HttpGet("conditions")]
         public List<BankCondition> GetBankConditions(int id)
         {
-
-
             return new List<BankCondition> {
                 new BankCondition {
                     Id = Guid.NewGuid(),
@@ -59,15 +57,14 @@ namespace BankGuranteeHack.Controllers
             };
         }
 
-        // POST api/values
         [HttpPost("setbank/{bankId}")]
-        public Guid SetBank([FromBody]Guid bankId)
+        public Guid SetBank(Guid bankId)
         {
             return Guid.NewGuid();
         }
 
         [HttpGet("pay/{applicationId}")]
-        public string Pay([FromBody]Guid applicationId)
+        public string Pay(Guid applicationId)
         {
             return Guid.NewGuid().ToString("N");
         }
