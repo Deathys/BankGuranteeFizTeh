@@ -10,7 +10,7 @@ using BankGuranteeHack.Contracts;
 namespace BankGuranteeHack.Controllers
 {
     [Route("api/[controller]")]
-    public class GuranteeController : Controller
+    public class GuaranteeController : Controller
     {
         // GET: api/values
         [HttpGet("contract")]
