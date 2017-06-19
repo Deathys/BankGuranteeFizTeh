@@ -61,8 +61,8 @@ namespace BcIntegration
 
         public string SendEth()
         {
-            string cmd = $@"personal.unlockAccount(""{acc1}"", '1', 0)";
-            cmd = "eth.sendTransaction({from: \"" + acc1 +"\", to: \""+ acc2 + "\", gasPrice: '0x0000000000001', gasLimit: '0x00001', value: 1 })";
+            string cmd = $@"personal.unlockAccount('{acc1}', '1', 0)";
+            cmd += "eth.sendTransaction({from: '" + acc1 + "', to: '"+ acc2 + "', gasPrice: '0x0000000000001', gasLimit: '0x00001', value: 1 })";
             return SendTransaction(cmd);
         }
     }
