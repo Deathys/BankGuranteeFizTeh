@@ -13,8 +13,8 @@ namespace BankGuranteeHack.Controllers
     public class GuaranteeController : Controller
     {
         // GET: api/values
-        [HttpGet("contract")]
-        public ContractInfo GetContract()
+        [HttpGet("contract/{contract}")]
+        public ContractInfo GetContract(string contract)
         {
             return new ContractInfo {
                 Amount = 8544.36M,
@@ -61,21 +61,15 @@ namespace BankGuranteeHack.Controllers
 
         // POST api/values
         [HttpPost("setbank/{bankId}")]
-        public void SetBank([FromBody]Guid bankId)
+        public Guid SetBank([FromBody]Guid bankId)
         {
-
+            return Guid.NewGuid();
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        [HttpGet("pay/{applicationId}")]
+        public string Pay([FromBody]Guid applicationId)
         {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            return Guid.NewGuid().ToString("N");
         }
     }
 }
