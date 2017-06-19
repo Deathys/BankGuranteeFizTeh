@@ -7,6 +7,8 @@
     public Customer Customer { get; set; }
 
     public Producer Producer { get; set; }
+
+    public string Tx { get; set; }
 }
 
 public class Customer

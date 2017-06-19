@@ -19,7 +19,7 @@ namespace BankGuranteeHack.Controllers
         public ContractInfo GetContract(string contract)
         {
 
-            bc.SendEth();
+            string tx = bc.SendEth();
 
             return new ContractInfo {
                 Amount = "8544.36",
@@ -35,7 +35,8 @@ namespace BankGuranteeHack.Controllers
                     Inn = "7726311464",
                     Kpp = "774850001",
                     Name = "АО \"Р - Фарм\""
-                }
+                },
+                Tx = tx
             };
         }
 
