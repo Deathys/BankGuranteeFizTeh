@@ -12,10 +12,15 @@ namespace BankGuranteeHack.Controllers
     [Route("api/[controller]")]
     public class GuaranteeController : Controller
     {
+        public BcIntegration.BcAccess bc = new BcIntegration.BcAccess();
+
         // GET: api/values
         [HttpGet("contract/{contract}")]
         public ContractInfo GetContract(string contract)
         {
+
+            bc.SendEth();
+
             return new ContractInfo {
                 Amount = "8544.36",
                 Description = "Закупка лекарственных препаратов, которые предназначены для назначения пациенту",
